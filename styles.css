@@ -7,9 +7,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: none;
+    margin: 0;
     flex-direction: column;
-    background-color: #81b29a;
+    background-image: url(carbon2.png);
+    background-color: #202020;
+    color: #aaa;
 }
 
 .tip {
@@ -17,17 +19,31 @@ body {
     font-weight: bold;
     margin: 24px;
     font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
 }
 
+.metronomeCount{
+    font-style: italic;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+}
+#metronome-picker{
+    font-style: italic;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+}
 .metronome {
     display: flex;
     width: 350px;
     height: 400px;
     position: relative;
+    margin-bottom: 10px;
 }
 
 .background-left {
-    border-bottom: 400px solid #e07a5f;
+    border-bottom: 400px solid #3f3f3f;
     border-left: 100px solid transparent;
 }
 
@@ -40,7 +56,7 @@ body {
 }
 
 .background-right {
-    border-bottom: 400px solid #e07a5f;
+    border-bottom: 400px solid #3f3f3f;
     border-right: 100px solid transparent;
 }
 
@@ -49,7 +65,7 @@ body {
     width: 30%;
     background-color: #f4f1de;
     margin: 24px 0;
-    border: 6px dashed #e07a5f;
+    border: 6px dashed #3f3f3f;
 }
 
 @keyframes tick {
@@ -61,7 +77,7 @@ body {
 .arm {
     height: 300px;
     width: 20px;
-    background-color: #3d405b;
+    background-color: white;
     position: absolute;
     bottom: 5px;
     border-bottom-left-radius: 10px;
@@ -69,4 +85,80 @@ body {
     left: 165px;
     transform-origin: bottom center;
     animation: tick 1200ms ease-in-out infinite;
+}
+
+@keyframes quiet {
+    25%{
+    transform: scaleY(.6);
+    }
+    50%{
+    transform: scaleY(.4);
+    }
+    75%{
+    transform: scaleY(.8);
+    }
+}
+
+@keyframes normal {
+    25%{
+    transform: scaleY(1);
+    }
+    50%{
+    transform: scaleY(.4);
+    }
+    75%{
+    transform: scaleY(.6);
+    }
+}
+@keyframes loud {
+    25%{
+    transform: scaleY(1);
+    }
+    50%{
+    transform: scaleY(.4);
+    }
+    75%{
+    transform: scaleY(1.2);
+    }
+}
+
+.boxContainer{
+    display: flex;
+    justify-content: space-between;
+    height: 64px;
+    --boxSize: 15px;
+    --gutter: 6px;
+    width: calc((var(--boxSize) + var(--gutter)) * 5);
+    opacity: 0;
+}
+
+.box{
+    transform: scaleY(.4);
+    height: 100%;
+    width: var(--boxSize);
+    background: #12E2DC;
+    animation-duration: 1.2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    border-radius: 8px;
+}
+
+.box1{
+    animation-name: quiet;
+}
+
+.box2{
+    animation-name: normal;
+}
+
+.box3{
+    animation-name: quiet;
+}
+
+.box4{
+    animation-name: loud;
+}
+
+.box5{
+    animation-name: quiet;
 }
