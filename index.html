@@ -8,10 +8,17 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="tip">
-        (Click anywhere to hear sound...)
+    <div class="boxContainer">
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+        <div class="box box4"></div>
+        <div class="box box5"></div>
     </div>
-
+    <div class="tip">
+        Drum Machine
+    </div>
+    <div class = "metronomeCount"></div>
     <div class="metronome">
         <div class="background-left"></div>
         <div class="background-center">
@@ -20,7 +27,27 @@
         <div class="background-right"></div>
         <div class="arm"></div>
     </div>
-
+    <div id="metronome-picker">
+        <div>
+            <input type="checkbox" id="hi-hat" value="hi-hat">
+            <label for="hi-hat">Hi-hat</label>
+            <input id="hi-hat-timing" type="number" value="0">
+        </div>
+        <div>
+            <input type="checkbox" id="kick-drum" value="kick-drum">
+            <label for="kick-drum">Kick drum</label>
+            <input id="kick-drum-timing" type="number" value="0">
+        </div>
+        <div>
+            <input type="checkbox" id="snare-drum" value="snare-drum">
+            <label for="snare-drum">Snare-drum</label>
+            <input id="snare-drum-timing" type="number" value="0">
+        </div>
+        <div>
+            <input type="checkbox" id="metronome" value="metronome">
+            <label for="metronome">Metronome</label>           
+        </div>
+    </div>
     <script src="main.js"></script>
 </body>
 </html>
